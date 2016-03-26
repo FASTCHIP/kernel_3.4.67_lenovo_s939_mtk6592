@@ -1,0 +1,17 @@
+mkdir /data/misc/sensors 0664 system system
+
+service msensord /system/bin/msensord
+    user system
+    group system
+    oneshot
+
+service akmd8963 /system/bin/akmd8963
+    disabled
+    user system
+    group system
+
+# for proximity sensor cali usage merge from avene-w --by lenovo huangdra 20130424 
+service nvram_proximity /system/bin/nvram_proximity	
+	user root	
+	oneshot	
+#for proximity sensor cali usage merge from avene-w --by lenovo huangdra 20130424 
